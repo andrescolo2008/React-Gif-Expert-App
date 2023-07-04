@@ -1,7 +1,5 @@
 import { useState } from "react"
-
-
-
+ import PropTypes from 'prop-types'
 
 export const AddCategory = ( {onNewCategory}) =>{
 
@@ -12,6 +10,7 @@ const onInputChange=({target}) =>{
 }
 
 const onSubmit = (event ) =>{
+
 
     event.preventDefault();
     if (inputValue.trim().length<=1) return;// esto evita quealpresionar entre o escribir unaletra  se cree un espacio vacío
@@ -27,7 +26,7 @@ const onSubmit = (event ) =>{
 
         <h1> ¿Qué Gif Quiere buscar ?
 
-<form onSubmit={onSubmit } >
+<form onSubmit={onSubmit } aria-label="form" >
 
 <input 
         type="text "
@@ -40,3 +39,7 @@ const onSubmit = (event ) =>{
        
     )
 }
+
+AddCategory.protoTypes ={
+    onNewCategory:PropTypes.func.isRequired,
+} 

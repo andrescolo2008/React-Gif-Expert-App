@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types'
 import { GifItem } from "../components/GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 
@@ -35,3 +36,6 @@ const{images,isLoading}=useFetchGifs(category);
     )
 }
 
+GitGrid.propTypes={
+  category:PropTypes.string.isRequired
+}
